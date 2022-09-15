@@ -16,6 +16,13 @@ class BinarySearchTest {
     }
 
     @Test
+    void shouldFindElementInSortedArrayWithSingleElement() {
+        int[] array = new int[]{1};
+
+        assertEquals(0, BinarySearch.search(array, 1).orElseThrow());
+    }
+
+    @Test
     void shouldReturnEmptyWhenElementNotFound() {
         int[] array = new int[]{1, 2, 3};
         var searchedElement = 4;
@@ -30,3 +37,4 @@ class BinarySearchTest {
         assertTrue(BinarySearch.search(emptyArray, 0).isEmpty());
     }
 }
+
